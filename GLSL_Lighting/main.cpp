@@ -10,6 +10,7 @@
 #include "glsl.h"
 #include <time.h>
 #include "Malla.h"
+#include "Cola.h"
 
 //-----------------------------------------------------------------------------
 
@@ -24,6 +25,8 @@ protected:
     float timer010;  // timer counting 0->1->0
     bool bUp;        // flag if counting up or down.
     Malla* miMalla;
+    Cola* miCola;
+
 
 public:
     myWindow() {}
@@ -38,11 +41,11 @@ public:
 
         if (shader) shader->begin();
         glPushMatrix();
-
+        glTranslatef(0, 0, -5);
         //glRotatef(timer010 * 360, 0.5, 1.0f, 0.1f);
 
         //glutSolidTeapot(0.5);
-
+        /*
         glPushMatrix();
         glTranslated(-1.5, 0.0, 0.0); //izquierda
         glutSolidTeapot(0.5);
@@ -84,8 +87,15 @@ public:
         glPopMatrix();
 
         miMalla->DibujarMalla(0, 1, 0); //arriba
-    
+        */
+        glTranslated(-2.0, 0.0, 0.0);
+        miCola->DibujarCola(20, 0, 0, 0);
 
+        glPushMatrix();
+        glTranslated(2, 1, 0);//arriba cubo rotado derecha
+        glutSolidCube(1);
+        glPopMatrix();
+        //miCola->DibujarCola(0, 0, 0, 0);
         if (shader) shader->end();
         glutSwapBuffers();
         glPopMatrix();
@@ -106,6 +116,7 @@ public:
         glEnable(GL_DEPTH_TEST);
 
         miMalla = new Malla();
+        miCola = new Cola();
         shader = SM.loadfromFile("vertexshader.txt", "fragmentshader.txt"); // load (and compile, link) from file
         if (shader == 0)
             std::cout << "Error Loading, compiling or linking shader\n";

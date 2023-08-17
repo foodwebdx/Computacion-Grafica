@@ -31,6 +31,9 @@
     <Filter Include="Malla">
       <UniqueIdentifier>{db795d01-aedb-4021-a8cf-8b8c93f9f38d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Cola">
+      <UniqueIdentifier>{670ee8e1-7559-4907-8236-770b625dd360}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="glew\include\Gl\glew.h">
@@ -74,6 +77,9 @@
     </ClInclude>
     <ClInclude Include="Malla.h">
       <Filter>Malla</Filter>
+    </ClInclude>
+    <ClInclude Include="Cola.h">
+      <Filter>Cola</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -161,6 +167,9 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Malla.cpp">
       <Filter>Malla</Filter>
+    </ClCompile>
+    <ClCompile Include="Cola.cpp">
+      <Filter>Cola</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
